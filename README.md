@@ -1,0 +1,2 @@
+# fasthands
+Simple clicking game
