@@ -1,0 +1,86 @@
+html, body { height: 100% }
+.container  {
+	height: 100%;
+}
+.container > .row,
+.container > .row > div  {
+	height: 100%;
+}
+#game-content-container {
+    display: none;
+}
+#form-container {
+}
+
+.actions-container {
+	background-color: #316A9C;
+	text-align: center;
+    padding-top: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.actions-container .name {}
+.actions-container .score { font-size: 60px; }
+
+.user-actions-container {}
+.direction-display-container {}
+.enemy-actions-container {}
+
+.direction-display {
+	height: 100%;
+	position: relative;
+}
+.direction-display-text {
+	margin: 0;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	font-size: 124px;
+    text-transform: uppercase;
+	font-weight: bold;
+	height: 80%;
+    width: 100%;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+	position: absolute;
+    cursor: pointer;
+}
+#post-game-container {
+    display: none;
+    height: 100%;
+    text-align: center;
+}
+.missed-hit {
+    font-size: 14px;
+    color: #8CFFFB;
+}
+
+.hit-accuracy {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #74FF20;
+}
+.post-game-statistics {
+    text-align: center;
+}
+.post-game-statistics li {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #2AA92A;
+}
+.goal-score {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    background: #316A9C;
+    color: white;
+}

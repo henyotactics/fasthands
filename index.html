@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fast Hands!</title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+    <style>
+    </style>
+  </head>
+  <body>
+	<div class="container">
+		<div id="post-game-container">
+			<h1 class="post-game-message"></h1>
+			<ul class="post-game-statistics">
+				<li class="accuracy">Accuracy: <span></span>%</li>
+				<li class="time">Time Spent: <span></span> seconds</li>
+			</ul>
+		</div>
+		<div id="form-container" class="row">
+			<form class="form-name-of-player">
+				<label>Select player: </label>
+				<select name="player-name" class="player-name">
+					<option>Ian</option>
+					<option>Dan</option>
+				</select>
+				<input type="submit" value="Submit" />
+			</form>
+		</div>
+		<div id="game-content-container" class="row">
+			<div class="col-xs-2 actions-container user-actions-container">
+				<div>
+					<div class="name player-name">Ian</div>
+					<div class="score player-score">0</div>
+					<div class="missed-hit missed-hit-player-1">Miss: <span>0</span></div>
+					<div class="hit-accuracy hit-accuracy-player-1">Accuracy: <span>0</span>%</div>
+				</div>
+			</div>
+			<div class="col-xs-8 direction-display-container">
+				<div class="goal-score">Goal: <span></span> hits</div>
+				<div class="direction-display">
+					<div class="direction-display-text">
+						<div class="dot"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-2 actions-container enemy-actions-container">
+				<div>
+					<div class="name enemy-name">Dan</div>
+					<div class="score enemy-score">0</div>
+					<div class="missed-hit missed-hit-player-2">Miss: <span>0</span></div>
+					<div class="hit-accuracy hit-accuracy-player-2">Accuracy: <span>0</span>%</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/arrow-fight.js"></script>
+  </body>
+</html>
