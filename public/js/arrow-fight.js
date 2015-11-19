@@ -78,7 +78,7 @@
 
 			if(event.target.className == "dot"){
 				if ($('.dot').hasClass('already-hit')) {
-
+					return;
 				} else {					
 					$('.dot').addClass('already-hit');
 
@@ -99,6 +99,9 @@
 		var playerTwoScore = 0;
 
 		socket.on('player hit', function(data){
+					
+			$('.dot').removeClass('already-hit');
+			
 			audioHit.play();
 			moveDot({ top: data.top, left: data.left });
 
