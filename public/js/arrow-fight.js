@@ -77,11 +77,17 @@
 			}
 
 			if(event.target.className == "dot"){
-				console.log("HIT!");
-				top = getRandomInt(0, canvasHeight);
-				left = getRandomInt(0, canvasWidth);
+				if ($('.dot').hasClass('already-hit')) {
 
-				socket.emit('player hit', { top: top, left: left });
+				} else {					
+					$('.dot').addClass('already-hit');
+
+					console.log("HIT!");
+					top = getRandomInt(0, canvasHeight);
+					left = getRandomInt(0, canvasWidth);
+
+					socket.emit('player hit', { top: top, left: left });
+				}
 			} else {
 				console.log("MISS!");
 
