@@ -19,7 +19,7 @@ var Player = function() {
 	}
 };
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8443
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 /**************************************************
@@ -88,10 +88,11 @@ function onSocketConnection(client) {
 
 		var index = players.indexOf(client.nickname);
 
-		if(index != -1) {
-			players.splice(index, 1);
-
-			console.log("Player " + client.nickname + " left the game!");
+		for(var x = 0; x < players.length; x++) {
+			if(players[x] == client.nickname){
+				players.splice(x, 1);
+				console.log("Player " + client.nickname + " left the game!");
+			}
 		}
 	});
 };
