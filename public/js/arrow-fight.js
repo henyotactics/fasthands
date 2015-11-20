@@ -3,7 +3,7 @@
 
 	var enemies = [];
 
-	var socket = io.connect();
+	var socket = io.connect("http://app-lovingwebsockets.rhcloud.com", {port: 8000, transports: ["websocket"]});
 
 	var setEventHandlers = function() {
 	    // Socket connection successful
