@@ -3,7 +3,7 @@
 
 	var enemies = [];
 
-	var socket = io.connect(window.location.host);
+	var socket = io.connect("http://fasthands-henyotactics.rhcloud.com:80/");
 
 	var setEventHandlers = function() {
 	    // Socket connection successful
