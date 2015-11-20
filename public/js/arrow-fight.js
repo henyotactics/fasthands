@@ -13,7 +13,7 @@
 	// Socket connected
 	function onSocketConnected() {
 		var sessionid = socket.io.engine.id;
-	    console.log("Connected to socket server" + sessionid);
+	    console.log("Connected to socket server " + sessionid);
 	};
 
 	$(document).ready(function() {

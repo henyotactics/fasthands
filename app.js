@@ -34,9 +34,10 @@ var socket,		// Socket controller
 function init() {
 	// Create an empty array to store players
 	players = [];
-
+	
 	// Set up Socket.IO to listen on port 8000
-	http.listen(server_port, server_ip_address, function(){
+	//http.listen(server_port, server_ip_address, function(){
+	http.listen("http://fasthands-henyotactics.rhcloud.com:8000/", function(){
 		console.log( "Listening on " + server_ip_address + ", server_port " + server_port );
 	});
 	
@@ -65,6 +66,7 @@ function onSocketConnection(client) {
 			callback(true);
 
 			client.nickname = data;
+
 			players.push(data);
 			this.broadcast.emit("playerlist", players);
 		}
@@ -84,7 +86,7 @@ function onSocketConnection(client) {
 
 	// Listen for client disconnected
 	client.on("disconnect", function(){		
-		console.log("Player has disconnected: " + client.id);
+		console.log("Player has disconnected: " + client.nickname + ", Client Id: " + client.id);
 
 		var index = players.indexOf(client.nickname);
 
@@ -94,6 +96,7 @@ function onSocketConnection(client) {
 				console.log("Player " + client.nickname + " left the game!");
 			}
 		}
+		
 	});
 };
 
