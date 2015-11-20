@@ -36,8 +36,7 @@ function init() {
 	players = [];
 	
 	// Set up Socket.IO to listen on port 8000
-	//http.listen(server_port, server_ip_address, function(){
-	http.listen("http://fasthands-henyotactics.rhcloud.com:8000/", function(){
+	http.listen(server_port, server_ip_address, function(){
 		console.log( "Listening on " + server_ip_address + ", server_port " + server_port );
 	});
 	
